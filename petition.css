@@ -1,0 +1,96 @@
+.petition-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100;
+    padding-bottom: 50px;
+}
+
+.petition-para {
+    width: 55%;
+    padding-right: 10px;
+}
+
+.signatures {
+    width: 45%;
+    padding-right: 10px;
+}
+
+.signature.valid {
+    color: green;
+}
+
+.signature.invalid {
+    color: red;
+}
+
+
+
+/* Revealable Section Animations */
+.revealable {
+    position: relative;
+    opacity: 0;
+    transform: translateY(150px);
+    transition: all 2s ease;
+}
+
+.revealable.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Modal Popup Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust to desired width */
+    max-width: 600px; /* Maximum width for larger screens */
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    border-radius: 10px; /* Optional: add rounded corners */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modal-image {
+    width: 100%; /* Make the image fit the container */
+    max-height: 300px; /* Limit the height of the image to prevent it from growing too large */
+    object-fit: contain; /* Ensure the image maintains its aspect ratio */
+    animation: image-animation 2s ease-in-out infinite;
+}
+
+/* Animation for the image */
+@keyframes image-animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Reduce Motion Button */
+.reduce-motion-btn {
+    margin-left: 10px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+body.light-mode {
+    background-color: white;
+    color: black;
+}
